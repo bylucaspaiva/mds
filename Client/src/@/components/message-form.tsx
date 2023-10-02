@@ -14,19 +14,19 @@ const MessageForm = () => {
       <CardContent>
         <form>
           <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
+            <div className="flex flex-col">
               <Label htmlFor="name">Nome</Label>
               <Input id="name" placeholder="Seu Nome" type='text'/>
             </div>
-            <div className="flex flex-col space-y-1.5">
+            <div className="flex flex-col">
               <Label htmlFor="email">Email</Label>
               <Input id="email" placeholder="Seu Email" type='email'/>
             </div>
-            <div className="flex flex-col space-y-1.5">
+            <div className="flex flex-col">
               <Label htmlFor="phone">Telefone</Label>
               <Input id="phone" placeholder="Seu Whats" type='tel' />
             </div>
-            <div className="flex flex-col space-y-1.5">
+            <div className="flex flex-col space-y-1">
               <Label htmlFor="message">Mensagem</Label>
               <Textarea id="message" placeholder="Descrição do orçamento" />
             </div>

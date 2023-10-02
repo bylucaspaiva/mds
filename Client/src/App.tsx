@@ -22,7 +22,7 @@ function App() {
             <ThemeSwitch />
           </div>
         </nav>
-        <main className="grid grid-cols-7">
+        <main className="grid grid-cols-7 items-center">
           <div className="col-span-5">
             <h1>Acabamento profissional</h1>
             <p>Porcelanato</p>
@@ -41,6 +41,7 @@ function App() {
             <MessageForm />
           </div>
         </main>
+        <footer></footer>
       </div>
     </ThemeProvider>
   );

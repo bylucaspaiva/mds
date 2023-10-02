@@ -12,7 +12,7 @@ const ThemeSwitch = () => {
   
   console.log(theme)
   return (
-    <div className="mt-1">
+    <div className="mt-1 ml-2">
       <Switch checked={resolvedTheme} onCheckedChange={setResolvedTheme}/>
     </div>
   )
