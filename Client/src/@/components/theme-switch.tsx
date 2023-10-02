@@ -2,11 +2,7 @@ import { useEffect, useState } from "react";
 import { Switch } from "../components/ui/switch"
 import { useTheme } from "./theme-provider";
 
-interface Props {
-  className: string;
-}
-
-const ThemeSwitch = ({className}: Props) => {
+const ThemeSwitch = () => {
   const [resolvedTheme, setResolvedTheme] = useState(false);
   const {theme, setTheme} = useTheme();
 
@@ -15,8 +11,8 @@ const ThemeSwitch = ({className}: Props) => {
   
   console.log(theme)
   return (
-    <div>
-      <Switch className={className} checked={resolvedTheme} onCheckedChange={setResolvedTheme}/>
+    <div className="mt-1">
+      <Switch checked={resolvedTheme} onCheckedChange={setResolvedTheme}/>
     </div>
   )
 }
