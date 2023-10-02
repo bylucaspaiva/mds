@@ -4,8 +4,10 @@ import { ThemeProvider } from "./@/components/theme-provider";
 import ThemeSwitch from "./@/components/theme-switch";
 import { Icon } from "@iconify/react";
 import ImageContainer from "./@/components/image-container";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { ScrollBar } from "./@/components/ui/scroll-area";
 
-const urls = [1,2,3,4]
+const urls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 function App() {
   return (
@@ -26,11 +28,14 @@ function App() {
             <p>Porcelanato</p>
             <p>Pinturas</p>
             <Separator className="my-4" />
-            <div className="flex space-x-4 pb-4">
-              {urls.map((i) => (
-                <ImageContainer id={i} key={i}/>
-              ))}
-            </div>
+            <ScrollArea>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mx-3">
+                {urls.map((i) => (
+                  <ImageContainer id={i} key={i} />
+                ))}
+              </div>
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
           </div>
           <div className="col-span-2">
             <MessageForm />

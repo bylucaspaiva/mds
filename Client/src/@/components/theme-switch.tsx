@@ -6,6 +6,7 @@ const ThemeSwitch = () => {
   const [resolvedTheme, setResolvedTheme] = useState(false);
   const {theme, setTheme} = useTheme();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => setTheme(resolvedTheme ? "dark" : "light"), [resolvedTheme])
 
   

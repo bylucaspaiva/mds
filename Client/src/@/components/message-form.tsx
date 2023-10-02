@@ -1,4 +1,3 @@
-import React from 'react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
 import { Label } from '@radix-ui/react-label'
 import { Input } from './ui/input'
@@ -35,8 +34,7 @@ const MessageForm = () => {
         </form>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
-        <Button>Deploy</Button>
+        <Button>Enviar</Button>
       </CardFooter>
     </Card>
   )
