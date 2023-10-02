@@ -1,11 +1,11 @@
 import { ThemeProvider } from "./@/components/theme-provider";
+import ThemeSwitch from "./@/components/theme-switch";
 
 function App() {
   return <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-    <nav className="container h-14 flex">
-      <h1 className="text-3xl font-bold underline">MDS Reformas</h1>
-      <h1>teste</h1>
-
+    <nav className="container h-14 flex justify-between items-center">
+      <h1 className="text-xl font-bold ">mdsreformas</h1>
+      <ThemeSwitch className=""/>
     </nav>
 </ThemeProvider>
 }
