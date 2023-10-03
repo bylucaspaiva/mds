@@ -6,7 +6,7 @@ import { Textarea } from './ui/textarea'
 
 const MessageForm = () => {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[350px] ">
       <CardHeader>
         <CardTitle>Faça um orçamento</CardTitle>
         <CardDescription>É sem compromisso 😅</CardDescription>
