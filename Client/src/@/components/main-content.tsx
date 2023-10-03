@@ -17,12 +17,14 @@ import banheiro from './../../assets/materialsImages/banheiro.jpg'
 
 const urls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
+interface Props {
+  className: string
+}
 
-const MainContent = () => {
+const MainContent = ({className}: Props) => {
   return (
-    <div className=" col-span-5 mx-3 pl-9">
-            <div className="grid grid-cols-1">
-              <Card className="col-span-1 p-auto mb-4">
+    <main className={className}>
+              <Card className="mb-4">
                 <CardHeader>
                   <CardTitle className="mx-auto">
                     Tudo em reformas e acabamentos
@@ -32,26 +34,24 @@ const MainContent = () => {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="col-span-1">
+              <Card>
                 <CardHeader>
-                  <CardTitle className="mx-auto mb-4">
+                  <h1 className="mx-auto mb-4 sm:text-xs md:text-lg lg:text-xl font-semibold">
                     Entregamos soluções em
-                  </CardTitle>
-                  <CardContent className="grid grid-cols-2 lg-grid-cols-4 md-grid-cols-2 sm-grid-cols-1">
+                  </h1>
+                  <CardContent className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
                     <ImageBlock url={porcelanato} description='Porcelanato'/>
                     <ImageBlock url={revestimento} description='Revestimento'/>
-                    {/* <CardDescription className="col-span-1 mx-auto">Drywall</CardDescription>  */}
-                    {/* <CardDescription className="col-span-1 mx-auto">Gesso</CardDescription> */}
                   </CardContent>
                 </CardHeader>
               </Card>
 
-              <Card className="col-span-1 mt-4">
+              <Card className="mt-4">
                 <CardHeader>
-                  <CardTitle className="mx-auto mb-4">
+                  <h1 className="mx-auto mb-4 sm:text-xs md:text-lg lg:text-xl font-semibold">
                     Reforma de imóveis e ambientes
-                  </CardTitle>
-                  <CardContent className="grid grid-cols-4 lg-grid-cols-4 md-grid-cols-2 sm-grid-cols-1">
+                  </h1>
+                  <CardContent className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
                     <ImageBlock url={sacada} description='Sacadas'/>
                     <ImageBlock url={churrasqueira} description='Churrasqueiras'/>
                     <ImageBlock url={escada} description='Escadas'/>
@@ -59,7 +59,6 @@ const MainContent = () => {
                   </CardContent>
                 </CardHeader>
               </Card>
-            </div>
             <Separator className="my-4" />
             <ScrollArea>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -74,7 +73,7 @@ const MainContent = () => {
               </div>
               <ScrollBar orientation="horizontal" />
             </ScrollArea>
-          </div>
+          </main>
   )
 }
 

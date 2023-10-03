@@ -7,12 +7,12 @@ interface Props {
 
 const ImageBlock = ({ url, description }: Props) => {
   return (
-    <CardContent className="mx-auto text-center col-span-1">
+    <CardContent className="text-center">
       <div className="overflow-hidden rounded-md  transform hover:scale-110 transition-transform hover:mb-2 shadow-lg">
         <img src={url} alt={description} />
       </div>
         <CardDescription>
-          <h2>{description}</h2>
+          <h2 className="text-center">{description}</h2>
         </CardDescription>
     </CardContent>
   );

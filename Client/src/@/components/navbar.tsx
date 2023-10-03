@@ -3,7 +3,7 @@ import ThemeSwitch from './theme-switch'
 
 const Navbar = () => {
   return (
-    <nav className="h-14 flex justify-between items-center w-full fixed top-0 z-10 px-20 shadow-md opacity-95">
+    <nav className="z-10 h-14 flex justify-between items-center w-full top-0 px-20 opacity-100">
           <h1 className="text-xl font-bold">mdsreformas</h1>
           <div className="flex items-center">
             <div className="flex items-center">

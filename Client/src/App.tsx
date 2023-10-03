@@ -7,16 +7,13 @@ import MainContent from "./@/components/main-content";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <Navbar />
-      <div className="container">
-        <main className="grid grid-cols-7 m-0 relative sm-grid-cols-1 top-14 z-0">
-          <MainContent />
-          <div className="col-span-2 m-0 md:fixed md:top-0 md:right-0 md:mt-10 md:mr-4 md:p-4 hidden md:block">
-            <MessageForm />
-          </div>
-        </main>
+        
+        <Navbar />
+        <div className="grid grid-cols-7 px-20 z-0">
+          <MainContent className="col-span-5 z-0 mr-4" />
+          <MessageForm className="col-span-2 z-0 lg:fixed sm:relative top-14 right-20 lg:w-1/4 " />
+        </div>
         <footer></footer>
-      </div>
     </ThemeProvider>
   );
 }
