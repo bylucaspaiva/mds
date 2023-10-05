@@ -8,7 +8,7 @@ interface Props {
 const ImageBlock = ({ url, description }: Props) => {
   return (
     <CardContent className="text-center">
-      <div className="overflow-hidden rounded-md  transform hover:scale-110 transition-transform hover:mb-2 shadow-lg">
+      <div className="overflow-hidden rounded-md  transform hover:scale-110 transition-transform hover:mb-4 shadow-lg">
         <img src={url} alt={description} />
       </div>
         <CardDescription>
