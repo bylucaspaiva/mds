@@ -1,8 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Separator } from '@radix-ui/react-separator'
-import { ScrollArea } from '@radix-ui/react-scroll-area'
 import ImageContainer from './image-container'
-import { ScrollBar } from './ui/scroll-area'
 import ImageBlock from './image-block'
 
 import porcelanato from './../../assets/materialsImages/porcelanato.jpg'
@@ -24,7 +22,7 @@ interface Props {
 const MainContent = ({className}: Props) => {
   return (
     <main className={className}>
-              <Card className="mb-4">
+              <Card className="mb-4 shadow-md">
                 <CardHeader>
                   <CardTitle className="mx-auto">
                     Tudo em reformas e acabamentos
@@ -34,7 +32,7 @@ const MainContent = ({className}: Props) => {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card>
+              <Card className='shadow-md'>
                 <CardHeader>
                   <h1 className="mx-auto mb-4 sm:text-xs md:text-lg lg:text-xl font-semibold">
                     Entregamos soluções em
@@ -46,7 +44,7 @@ const MainContent = ({className}: Props) => {
                 </CardHeader>
               </Card>
 
-              <Card className="mt-4">
+              <Card className="mt-4 shadow-md">
                 <CardHeader>
                   <h1 className="mx-auto mb-4 sm:text-xs md:text-lg lg:text-xl font-semibold">
                     Reforma de imóveis e ambientes
@@ -60,19 +58,13 @@ const MainContent = ({className}: Props) => {
                 </CardHeader>
               </Card>
             <Separator className="my-4" />
-            <ScrollArea>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+
+              <Card className="p-4 shadow-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                
                 {urls.map((i) => (
-                  <ImageContainer id={i} key={i} />
+                    <ImageContainer id={i} key={i} />
                 ))}
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-4">
-                {urls.map((i) => (
-                  <ImageContainer id={i} key={i} />
-                ))}
-              </div>
-              <ScrollBar orientation="horizontal" />
-            </ScrollArea>
+              </Card>
           </main>
   )
 }
