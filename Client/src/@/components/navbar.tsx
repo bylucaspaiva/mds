@@ -1,9 +1,14 @@
 import { Icon } from '@iconify/react/dist/iconify.js'
 import ThemeSwitch from './theme-switch'
+import DialogForm from './dialog-form';
 
-const Navbar = () => {
+interface Props {
+  className: string;
+}
+
+const Navbar = ({className}: Props) => {
   return (
-    <nav className="z-10 h-14 flex justify-between items-center w-full top-0 px-20 opacity-100">
+    <nav className={className}>
           <h1 className="text-xl font-bold">mdsreformas</h1>
           <div className="flex items-center">
             <div className="flex items-center">
@@ -11,6 +16,7 @@ const Navbar = () => {
               <Icon icon="mdi:instagram" width="30" height="30" />
             </div>
             <ThemeSwitch />
+            <DialogForm  />
           </div>
         </nav>
   )

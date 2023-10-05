@@ -1,20 +1,20 @@
-import MessageForm from "./@/components/message-form";
 import { ThemeProvider } from "./@/components/theme-provider";
 
 import Navbar from "./@/components/navbar";
 import MainContent from "./@/components/main-content";
 
 function App() {
+  // const [isMobile, setIsMobile] = useState(false);
+
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        
-        <Navbar />
-        <div className="grid grid-cols-7 px-20 z-0">
-          <MainContent className="col-span-5 z-0 mr-4" />
-          <MessageForm className="col-span-2 z-0 lg:fixed sm:relative top-14 right-20 lg:w-1/4 " />
+    <>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <div className="px-20">
+          <Navbar className="bg-background sticky top-0 z-50 h-14 flex justify-between items-center w-full opacity-100" />
+          <MainContent className=" top-14 sm:col-span-7 col-span-5 z-0 " />
         </div>
-        <footer></footer>
-    </ThemeProvider>
+      </ThemeProvider>
+    </>
   );
 }
 
