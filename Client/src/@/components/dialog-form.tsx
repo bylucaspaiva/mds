@@ -51,7 +51,7 @@ const DialogForm = () => {
               </div>
             </form>
           </CardContent>
-          <CardFooter className="flex justify-between">
+          <CardFooter className="flex justify-between mt-2 sm:md-4">
             <Button className="ml-auto">Enviar</Button>
           </CardFooter>
         </Card>
