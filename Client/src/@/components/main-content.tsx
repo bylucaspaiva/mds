@@ -10,9 +10,6 @@ import escada from './../../assets/materialsImages/escadas.jpg'
 import sacada from './../../assets/materialsImages/sacadas.jpg'
 import banheiro from './../../assets/materialsImages/banheiro.jpg'
 
-
-
-
 const urls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 interface Props {
@@ -34,7 +31,7 @@ const MainContent = ({className}: Props) => {
               </Card>
               <Card className='shadow-md'>
                 <CardHeader>
-                  <h1 className=" md:mx-auto lg:mx-auto mb-4 sm:text-xs md:text-lg lg:text-xl font-semibold">
+                  <h1 className="md:mx-auto lg:mx-auto mb-4 sm:text-base md:text-lg lg:text-xl font-semibold">
                     Entregamos soluções em
                   </h1>
                   <CardContent className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
@@ -46,7 +43,7 @@ const MainContent = ({className}: Props) => {
 
               <Card className="mt-4 shadow-md">
                 <CardHeader>
-                  <h1 className="mx-auto mb-4 sm:text-xs md:text-lg lg:text-xl font-semibold">
+                  <h1 className="mx-auto mb-4 sm:text-base md:text-lg lg:text-xl font-semibold">
                     Reforma de imóveis e ambientes
                   </h1>
                   <CardContent className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
