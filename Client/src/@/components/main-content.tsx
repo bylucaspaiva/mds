@@ -34,7 +34,7 @@ const MainContent = ({className}: Props) => {
               </Card>
               <Card className='shadow-md'>
                 <CardHeader>
-                  <h1 className="mx-auto mb-4 sm:text-xs md:text-lg lg:text-xl font-semibold">
+                  <h1 className=" md:mx-auto lg:mx-auto mb-4 sm:text-xs md:text-lg lg:text-xl font-semibold">
                     Entregamos soluções em
                   </h1>
                   <CardContent className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
