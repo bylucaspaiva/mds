@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
 builder.Services.AddAWSService<IAmazonSimpleEmailService>();
-builder.Services.AddTransient<IMailService, SESService>();
+builder.Services.AddTransient<IMailService, MailService>();
 
 var app = builder.Build();
 
