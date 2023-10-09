@@ -5,6 +5,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
@@ -14,13 +15,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "./ui/form";
 import { useForm } from "react-hook-form";
+import { Textarea } from "./ui/textarea";
 
 const formSchema = z.object({
   name: z
@@ -29,10 +30,24 @@ const formSchema = z.object({
       message: "Nome precisa ter no mínimo duas letras.",
     })
     .max(50),
-  email: z.string().min(8, {
-    message: "Email precisa ter no mínimo duas letras.",
-
-  }).max(100)
+  email: z
+    .string()
+    .min(8, {
+      message: "Email precisa ter no mínimo 8 letras e no máximo 100",
+    })
+    .max(100),
+  phone: z
+    .string()
+    .min(11, {
+      message: "Número precisa ter no mínimo 11 digitos.",
+    })
+    .max(11),
+  message: z
+    .string()
+    .min(20, {
+      message: "A Mensagem precisa ter no mínimo 20 letras e no máximo 280.",
+    })
+    .max(280),
 });
 
 const DialogForm = () => {
@@ -40,6 +55,9 @@ const DialogForm = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      email: "",
+      phone: "",
+      message: "",
     },
   });
 
@@ -65,50 +83,66 @@ const DialogForm = () => {
           <CardContent>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)}>
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Nome</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Nome" {...field} />
-                    </FormControl>
-                    <FormDescription>
-                      This is your public display name.
-                    </FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Nome</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Nome" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Email" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Telefone</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Telefone" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Telefone</FormLabel>
+                      <FormControl>
+                        <Textarea placeholder="Mensagem" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <CardFooter className="flex justify-between mt-2 sm:md-4">
+                <Button type="submit" className="ml-auto">
+                  Enviar
+                </Button>
+              </CardFooter>
               </form>
-              
-              <Button type="submit">Enviar</Button>
             </Form>
-            {/* <form>
-              <div className="px-4 md:px-0 w-full items-center gap-4">
-                <div>
-                  <Label htmlFor="name">Nome</Label>
-                  <Input id="name" placeholder="Seu Nome" type="text" />
-                </div>
-                <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" placeholder="Seu Email" type="email" />
-                </div>
-                <div>
-                  <Label htmlFor="phone">Telefone</Label>
-                  <Input id="phone" placeholder="Seu Whats" type="tel" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="message">Mensagem</Label>
-                  <Textarea id="message" placeholder="Descrição do orçamento" />
-                </div>
-              </div>
-            </form> */}
           </CardContent>
-          {/* <CardFooter className="flex justify-between mt-2 sm:md-4">
-            <Button className="ml-auto">Enviar</Button>
-          </CardFooter> */}
         </Card>
       </DialogContent>
     </Dialog>
