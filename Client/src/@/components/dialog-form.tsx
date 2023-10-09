@@ -22,6 +22,7 @@ import {
 } from "./ui/form";
 import { useForm } from "react-hook-form";
 import { Textarea } from "./ui/textarea";
+import MailService from "../../services/MailService";
 
 const formSchema = z.object({
   name: z
@@ -63,6 +64,9 @@ const DialogForm = () => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    MailService.post({email: "lucasp4iva@gmail.com", subject: "sended by dialog form", body: "client side test mds"});
+    console.log("enviado");
+
   }
 
   return (
