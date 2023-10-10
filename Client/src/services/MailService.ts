@@ -9,7 +9,7 @@ class MailService {
     return BaseApi.post(`${baseUrl}`, request, {
       headers: {
         'accept': '*/*',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       }})
   }
 }

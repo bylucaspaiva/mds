@@ -64,7 +64,7 @@ const DialogForm = () => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    MailService.post({email: "lucasp4iva@gmail.com", subject: "sended by dialog form", body: "client side test mds"});
+    MailService.post({toEmail: "lucasp4iva@gmail.com", subject: "sended by dialog form", body: "client side test mds"});
     console.log("enviado");
 
   }
@@ -86,7 +86,7 @@ const DialogForm = () => {
           </CardHeader>
           <CardContent>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="px-4 sm:px-0">
                 <FormField
                   control={form.control}
                   name="name"
@@ -131,7 +131,7 @@ const DialogForm = () => {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Telefone</FormLabel>
+                      <FormLabel>Mensagem</FormLabel>
                       <FormControl>
                         <Textarea placeholder="Mensagem" {...field} />
                       </FormControl>

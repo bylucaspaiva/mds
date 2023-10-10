@@ -1,5 +1,5 @@
 interface MailModel {
-  email: string;
+  toEmail: string;
   subject: string;
   body: string;
 }
