@@ -2,6 +2,7 @@
 using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
+using Org.BouncyCastle.Asn1.Ocsp;
 
 namespace Api.Services;
 
@@ -19,9 +20,12 @@ public class MailService : IMailService
     }
     public async Task SendEmailAsync(MailRequest mailRequest)
     {
+        
+
         var email = new MimeMessage();
         email.From.Add(new MailboxAddress(_mailSettings.DisplayName, _mailSettings.Mail));
-        email.To.Add(MailboxAddress.Parse(mailRequest.ToEmail));
+        email.To.Add(MailboxAddress.Parse(string.IsNullOrEmpty(mailRequest.ToEmail) 
+            ? _mailSettings.Mail : mailRequest.ToEmail ));
         email.Subject = mailRequest.Subject;
         var builder = new BodyBuilder();
         builder.HtmlBody = mailRequest.Body;

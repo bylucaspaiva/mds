@@ -63,10 +63,7 @@ const DialogForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    MailService.post({toEmail: "lucasp4iva@gmail.com", subject: "sended by dialog form", body: "client side test mds"});
-    console.log("enviado");
-
+    MailService.post({toEmail: "", subject: `Orçamento ${values.name}`, body: `Número: ${values.phone} \n ${values.message}`});
   }
 
   return (
