@@ -1,6 +1,6 @@
 # Freela
 
-Projeto simples onde as pessoas podem enviar por formulário uma requisição de orçamento, e também pdoe chamar no whatsapp.
+Projeto simples onde as pessoas podem enviar por formulário uma requisição de orçamento, além disso a api do whatsapp também foi usada permitindo assim que seja possível mandar mensagens diretamente no whatsapp.
 
 ## pc
 <table>
