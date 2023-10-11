@@ -34,7 +34,8 @@ Projeto simples onde as pessoas podem enviar por formulário um e-mail de orçam
   </tr>
 </table>
 
-Para enviar emails, nos campos abaixo onde houver <> é necessário adicionar as credencias SMTP da amazon
+## Clonar
+Ao clonar o projeto a primeira coisa que deve ser feita é adcionar na raiz da pasta MDS (projeto back-end) o arquivo appsettings.json
 ```
 {
   "Logging": {
@@ -58,3 +59,4 @@ Para enviar emails, nos campos abaixo onde houver <> é necessário adicionar as
   }
 }
 ```
+Para o envio de emails funcionar corretamente, nos campos acima onde houver <> é necessário adicionar as credencias SMTP da amazon
